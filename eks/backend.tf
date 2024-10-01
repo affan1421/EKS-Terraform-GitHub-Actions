@@ -7,11 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "my-ews-baket1"
-    region         = "us-east-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
-    encrypt        = true
+    bucket         = "my-terraform-state-bucket"
+    key            = "eks/terraform.tfstate"   # Path to the state file within the bucket
+    region         = "ap-south-1"
+    dynamodb_table = "terraform-state-lock"    # Optional, for state locking
   }
 }
 
