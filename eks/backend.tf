@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "my-terraform-state-bucket"
+    bucket         = "affan1421"
     key            = "eks/terraform.tfstate"   # Path to the state file within the bucket
     region         = "ap-south-1"
     dynamodb_table = "terraform-state-lock"    # Optional, for state locking
